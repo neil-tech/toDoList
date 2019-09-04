@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://kit.fontawesome.com/caad8e645e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		function showRemove(){
+			count = $('li').length;
+			if(count > 0){
+				$('#remove').show();
+			}
+			else
+				$('#remove').hide();
+		}
+		$(document).ready(function(){
+			$('#remove').hide();
+			$('#add').on("click", function(){
+				var value = $('input').val();
+				if (value !== '') {
+					var elem = $("<li></li>").text(value);
+					var btn = $("<button class='rem'>X</button>");
+						$(elem).append(btn);
+						$('#myList').append(elem);
+						$('input').val("");
+						showRemove();
+						$('.rem').on("click", function(){
+							$(this).parent().remove();
+							showRemove();
+						});
+				}
+				$('#remove').on("click", function(){
+					$('myList').empty();
+					showRemove();
+				});
+			});
+		});
+	</script>
+	<div class="container">
+		<h1>To Do List</h1>
+		<input type="text" placeholder="New Item" />
+		<button id="add">Add</button>
+		<ol id="myList"></ol>
+		<button id="remove">Remove</button>
+	</div>
+
+</body>
+</html>

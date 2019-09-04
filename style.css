@@ -1,0 +1,57 @@
+@font-face{
+	font-family: futura;
+	src: url('Futura-Medium.woff');
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	font-family: futura;
+}
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #000;
+	padding: 50px 100px;
+}
+h1{
+	text-align: center;
+	color: #fff;
+}
+::placeholder{
+	color: #fff;
+}
+input[type="text"]{
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	padding: 6px;
+	background-color: transparent;
+	color: #fff;
+}
+button{
+	border: none;
+	outline: none;
+	width: 50px;
+	height: 25px;
+	margin-left: 20px;
+	border-radius: 50px;
+	transition: .2s;
+}
+button:hover{
+	background-color: #fff;
+}
+#remove{
+	width: 100px;
+	margin: auto;
+}
+li{
+	color: #fff;
+	margin: 20px 0;
+	line-height: 25px;
+}
+.rem{
+	color: red;
+}
